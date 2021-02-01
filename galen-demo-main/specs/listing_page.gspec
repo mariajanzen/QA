@@ -5,6 +5,14 @@
     breadcrumbs          xpath         //div[@data-qa='breadcrumbs']
     language_selector    xpath         //div[@data-qa='lang-selector-toggle']
     log_in               xpath         //div[@data-qa='header-login']
+    find_btn             xpath         //*[@data-qa='button-search-find-header']
+    filter_nearby        xpath         //*[@data-qa='filter-button-nearby']
+    filter_top_rated     xpath         //*[@data-qa='filter-button-top-rated']
+    find_placehld_text   xpath         //input[@data-qa='search-bar-dining-input']
+    header_logo          xpath         //div[@data-qa='header-logo']
+ ##   footer_logo          xpath         //div[@class='sc-1jmynk5-0 gNqYxZ']
+ ##   footer_copyright     xpath         //*[@id="root"]/section/div[4]/div/div/div[6]/text()
+
 
 ========================================
 # Validation on desktop resolutions
@@ -17,7 +25,7 @@
       width 1300 to 1380px
 
     listing_header:
-      height 442 to 446px
+      height 442 to 449px
       width ~ 887px
 
     language_selector:
@@ -25,6 +33,25 @@
       css font-size is "14px"
       css font-family matches ".*Roboto.*, .*Helvetica.*,.*Arial.*,.*sans-serif.*"
 
+= Filter section =
+    find_btn:
+      text is "${i18n.find.button}"
+
+    filter_nearby:
+      text is "${i18n.nearby.filter}"
+      left-of filter_top_rated -260 to -182px
+      height ~ 40px
+      width 81 to 110px
+
+    find_placehld_text:
+      text is "${i18n.find.placeholder}"
+      right-of header_logo ~24px
+
+##= Footer section =
+  ##  footer_logo:
+    ##  height 37px
+      ##width 165px
+     ## above footer_copyright
 
 
 
