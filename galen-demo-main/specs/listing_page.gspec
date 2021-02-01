@@ -10,8 +10,10 @@
     filter_top_rated     xpath         //*[@data-qa='filter-button-top-rated']
     find_placehld_text   xpath         //input[@data-qa='search-bar-dining-input']
     header_logo          xpath         //div[@data-qa='header-logo']
- ##   footer_logo          xpath         //div[@class='sc-1jmynk5-0 gNqYxZ']
- ##   footer_copyright     xpath         //*[@id="root"]/section/div[4]/div/div/div[6]/text()
+    footer_all           xpath         //*[@data-qa='footer-sections-all']
+   ## footer_logo          xpath         //div[@class='sc-1jmynk5-0 gNqYxZ']
+   ## footer_copyright     xpath         //*[@id="root"]/section/div[4]/div/div/div[6]/text()
+    footer_tm            xpath         //div[@data-qa='footer-trademark-section']
 
 
 ========================================
@@ -44,12 +46,19 @@
       width 81 to 110px
 
     find_placehld_text:
-      text is "${i18n.find.placeholder}"
+     ## text is "${i18n.find.placeholder}"
       right-of header_logo ~24px
 
-##= Footer section =
-  ##  footer_logo:
-    ##  height 37px
+= Footer section =
+    footer_all:
+        contains footer_tm
+        height 654px
+        width 1301px
+
+    ##contains footer_logo
+
+    ##footer_logo:
+      ##height 37px
       ##width 165px
      ## above footer_copyright
 
