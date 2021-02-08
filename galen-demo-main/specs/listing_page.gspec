@@ -14,6 +14,7 @@
    ## footer_logo          xpath         //div[@class='sc-1jmynk5-0 gNqYxZ']
    ## footer_copyright     xpath         //*[@id="root"]/section/div[4]/div/div/div[6]/text()
     footer_tm            xpath         //div[@data-qa='footer-trademark-section']
+    copyright_text       css           .hyss0n-6
 
 
 ========================================
@@ -54,8 +55,6 @@
         contains footer_tm
         height 654px
         width 1301px
-
-    ##contains footer_logo
 
     ##footer_logo:
       ##height 37px
