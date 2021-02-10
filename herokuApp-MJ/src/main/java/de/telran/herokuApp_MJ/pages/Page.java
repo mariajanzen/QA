@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
  * Abstract class representation of a Page in the UI. Page object pattern
  */
 public abstract class Page {
+    public static final String BASE_URL = "http://the-internet.herokuapp.com";
+
 
     protected WebDriver driver;
 
