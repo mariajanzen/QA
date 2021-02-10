@@ -17,10 +17,6 @@ public class LoginTest {
     private ChromeDriver driver;
     private String validUsername = "tomsmith";
     private String validPassword = "SuperSecretPassword!";
-    private String titleText = driver.findElement(By.className("icon-lock")).getText();
-
-
-
 
     @BeforeEach
     public void initPageObjects() {
@@ -40,8 +36,17 @@ public class LoginTest {
         loginPage.goToLoginPage();
         loginPage.insertCredentials(validUsername, validPassword);
         loginPage.validClickLogin();
-
-        assertEquals(loginPage.validClickLogin(), new SecureArea(driver));
-
+        String titleText = driver.findElement(By.id("flash")).getText();
+        assertEquals(titleText, "You logged into a secure area!\n×");
     }
+
+    @Test
+    public void unsuccessfulLogin() {
+        loginPage.goToLoginPage();
+        loginPage.insertCredentials("tom", "invalidPassword");
+        loginPage.inValidClickLogin();
+        String titleText = driver.findElement(By.id("flash-messages")).getText();
+        assertEquals(titleText, "Your username is invalid!\n×");
+    }
+
 }

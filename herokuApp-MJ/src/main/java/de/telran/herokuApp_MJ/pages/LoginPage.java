@@ -27,4 +27,8 @@ public class LoginPage extends Page{
         driver.findElement(LOGIN_BUTTON).click();
         return new SecureArea(driver);
     }
+
+    public void inValidClickLogin() {
+        driver.findElement(LOGIN_BUTTON).click();
+    }
 }
